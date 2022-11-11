@@ -37,7 +37,17 @@
 
           <div class="col-6 offset-3">
 
-            <table class="table table-dark table-hover">
+            <div
+              v-if="isLoading"
+              class="col-2 offset-5">
+
+              <div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+
+            </div>
+
+            <table
+              v-else
+              class="table table-dark table-hover">
               <thead>
                 <tr>
                   <th scope="col">#</th>

@@ -8,11 +8,13 @@ createApp({
     return {
       email: '',
       mumberOfEmails: 10,
-      arrayOfEmails: []
+      arrayOfEmails: [],
+      isLoading: true
     }
   },
   methods: {
     getApi() {
+      this.isLoading = true;
       for(let i = 0; i < this.mumberOfEmails; i++){
         axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
         .then( generatedEmail => {
@@ -22,6 +24,7 @@ createApp({
 
         })
       }
+      this.isLoading = false;
     }
   },
   mounted() {
